@@ -17,5 +17,6 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
-- task: PublishBuildArtifacts@1
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+- task: DownloadPipelineArtifact@0
+  inputs:
+    targetPath: $(System.DefaultWorkingDirectory)
