@@ -17,6 +17,8 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
-- task: DownloadPipelineArtifact@0
+    steps:
+- task: PublishPipelineArtifact@0
   inputs:
-    targetPath: $(System.DefaultWorkingDirectory)
+    artifactName: 'drop'
+    targetPath: 'src/publish'
