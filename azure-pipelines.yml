@@ -14,11 +14,10 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
+    publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
-    codeCoverageToolOption: Cobertura
-    
+   
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(System.DefaultWorkingDirectory)'
